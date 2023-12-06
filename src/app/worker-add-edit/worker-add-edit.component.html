@@ -1,0 +1,42 @@
+<div class="titluDialog">
+  <h1 style="text-align: center; margin-bottom: -5px">
+    Add the following informations
+  </h1>
+</div>
+<form [formGroup]="workForm" (ngSubmit)="onFormSubmit()">
+  <div class="informatiiProfesionale">
+    <div class="proiecte">
+      <h2 style="margin-bottom: 0px">Projects</h2>
+      <label>Title Project</label>
+      <input
+        type="text"
+        placeholder="Title Project"
+        formControlName="Project"
+      />
+      <label>Project Description</label>
+      <textarea
+        cols="30"
+        rows="10"
+        placeholder="Project Description"
+        formControlName="Description"
+      ></textarea>
+      <Label>Programming Languages & Software Used</Label>
+      <input
+        type="text"
+        placeholder="Programming Languages & Software Used"
+        formControlName="Technologies"
+      />
+      <label>Project Link</label>
+      <input type="text" placeholder="Project Link" formControlName="Link" />
+      <div class="imgProiect"><label for="image">Image</label>
+        <input type="file" class="file-upload" id="formfile" (change)="onChange($event)">
+        </div>
+    </div>
+  </div>
+
+  <br />
+  <div class="butoaneActiuni">
+   <button type="submit">{{data ? 'Update': 'Save'}}</button>
+    <input type="button" value="Exit" [mat-dialog-close]="false" />
+  </div>
+</form>
